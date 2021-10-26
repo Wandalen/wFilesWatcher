@@ -32,6 +32,8 @@ jobs :
         git config --global core.autocrlf input
         git config --global user.email "testing@testing.com"
         git config --global user.name "Testing"
+        git config --global pull.rebase false
+        git config --global init.defaultBranch master
     - uses : actions/checkout@v2
       with :
         fetch-depth: 2
@@ -53,6 +55,12 @@ jobs :
     - run : npm list
       continue-on-error : true
 
+    - name : "Linux"
+      if : matrix.os == 'ubuntu-latest'
+      run : |
+        brew install --build-from-source watchman
+        npm test
+
     - name : "Windows"
       if : matrix.os == 'windows-latest'
       run : |
@@ -60,8 +68,8 @@ jobs :
         npm test
       shell : powershell
 
-    - name : "Linux/Mac"
-      if : matrix.os == 'ubuntu-latest' || matrix.os == 'macos-latest'
+    - name : "Mac"
+      if : matrix.os == 'macos-latest'
       run : |
         brew install watchman
         npm test
