@@ -3,8 +3,8 @@ root:
   - wFileWacher.out
 consistency:
   ../will.yml: &ref_0
-    hash: 24420b0027ca9e636335867d43e608f9
-    size: 7281
+    hash: a2ad2cda41011eabde43949c3484cad9
+    size: 7174
 module:
   wFileWacher.out:
     about:
@@ -414,9 +414,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -752,12 +749,6 @@ module:
           - 'step::doc.export'
         criterion:
           content: doc
-          export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
           export: 1
       export:
         steps:
@@ -1132,9 +1123,6 @@ module:
           content: npm
         inherit:
           - module.export
-      npm.publish:
-        opts:
-          shell: npm publish
       npm.generate.debug.raw:
         opts:
           entryPath: 'path::entry.out.*=1'
@@ -1471,12 +1459,6 @@ module:
         criterion:
           content: doc
           export: 1
-      npm.export:
-        steps:
-          - 'step::npm.publish'
-        criterion:
-          content: npm
-          export: 1
       export:
         steps:
           - 'build::proto.export'
@@ -1534,5 +1516,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: 24420b0027ca9e636335867d43e608f9
-        size: 7281
+        hash: a2ad2cda41011eabde43949c3484cad9
+        size: 7174
