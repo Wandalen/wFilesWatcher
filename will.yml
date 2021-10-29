@@ -1,6 +1,11 @@
 about:
   name: wFileWacher
-  description: Aggregates file watching strategies and provides a single interface to them. The strategy can be a wrapper around a built-in feature or a separate library. Use the module to easily create watcher instances, pause/resume watchers, switch between watcher strategies and control created watchers using the watcher manager class.
+  description: >-
+    Aggregates file watching strategies and provides a single interface to them.
+    The strategy can be a wrapper around a built-in feature or a separate
+    library. Use the module to easily create watcher instances, pause/resume
+    watchers, switch between watcher strategies and control created watchers
+    using the watcher manager class.
   version: 0.1.0
   enabled: 1
   license: MIT
@@ -18,7 +23,7 @@ about:
     - chrome >= 60.0.0
     - firefox >= 60.0.0
   npm.scripts:
-    test: wtest .run 'proto/**' rapidity:-1
+    test: 'wtest .run ''proto/**'' rapidity:-1'
     docgen: wdocgen .build proto
     watches.limit.increase: node proto/wtools/amid/l4_files/l7_watcher/step/WatchesLimit.s
 build:
@@ -34,12 +39,6 @@ build:
       export: 1
     steps:
       - 'step::doc.export'
-  npm.export:
-    criterion:
-      content: npm
-      export: 1
-    steps:
-      - 'step::npm.publish'
   export:
     criterion:
       default: 1
@@ -144,7 +143,8 @@ path:
     criterion:
       tests: only.tests
   entry.out.raw.debug:
-    path: '{path::out.*=1}/source/wtools/amid/l4_files/l7_watcher/entry/FilesWatcher.s'
+    path: >-
+      {path::out.*=1}/source/wtools/amid/l4_files/l7_watcher/entry/FilesWatcher.s
     criterion:
       debug:
         - debug
@@ -238,8 +238,6 @@ step:
     tar: 0
     criterion:
       content: npm
-  npm.publish:
-    shell: npm publish
   npm.generate:
     inherit: npm.generate
     entryPath: 'path::entry.out.*=1'
