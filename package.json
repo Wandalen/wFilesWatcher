@@ -5,11 +5,11 @@
   "enabled": 1,
   "description": "Aggregates file watching strategies and provides a single interface to them. The strategy can be a wrapper around a built-in feature or a separate library. Use the module to easily create watcher instances, pause/resume watchers, switch between watcher strategies and control created watchers using the watcher manager class.",
   "license": "MIT",
-  "author": "Kostiantyn Wandalen <wanalen@01.school>",
+  "author": "Kostiantyn Wandalen <wandalen@obox.systems>",
   "contributors": [
     {
       "name": "Kostiantyn Wandalen",
-      "email": "wanalen@01.school"
+      "email": "wandalen@obox.systems"
     },
     {
       "name": "Volodymyr M.",
