@@ -3,8 +3,8 @@ root:
   - wFileWacher.out
 consistency:
   ../will.yml: &ref_0
-    hash: a2ad2cda41011eabde43949c3484cad9
-    size: 7174
+    hash: 0ae9f7781cb6292640393cc32c1da51c
+    size: 7182
 module:
   wFileWacher.out:
     about:
@@ -1516,5 +1516,5 @@ module:
           - 'build::npm'
     consistency:
       ../will.yml:
-        hash: a2ad2cda41011eabde43949c3484cad9
-        size: 7174
+        hash: 0ae9f7781cb6292640393cc32c1da51c
+        size: 7182
