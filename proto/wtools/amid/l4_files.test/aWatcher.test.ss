@@ -1078,6 +1078,13 @@ async function filePathComplexTreeDeleteNestedFile( test )
   })
   a.fileProvider.fileDelete( path.join( filePath, 'file0' ) );
   await eventReady;
+  /*
+     deleting of files create and delete 1 additional file
+     https://github.com/Wandalen/wFilesBasic/blob/master/proto/wtools/amid/l4_files/l7_provider/HardDrive.ss#L1302
+  */
+  if( context.watcher === _.files.watcher.fb && process.platform === 'win32' )
+  test.identical( files.length, 2 );
+  else
   test.identical( files.length, 1 );
   await watcher.close();
 
